@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import "./chat.css";
 import EmojiPicker from "emoji-picker-react";
 
@@ -9,7 +9,6 @@ const Chat = () => {
         setText((prev) => prev + e.emoji)
         setOpen(false);
     }
-
 
     return (
         <div className='chat'>
