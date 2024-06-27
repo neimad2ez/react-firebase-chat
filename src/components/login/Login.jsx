@@ -1,11 +1,16 @@
 import { useState } from "react"
 import "./login.css"
+import { toast } from "react-toastify"
 
 const Login = () => {
     const [avatar, setAvatar] = useState({
         file:null,
         url:""
     })
+
+    const handleLogin = e => {
+        e.preventDefault() //Prevent default form submit
+    }
 
     const handleAvatar = e => {
         if(e.target.files[0]) { //Makes sure there is a avatar to be handled
@@ -20,13 +25,13 @@ const Login = () => {
         <div className="login">
             <div className="item">
                 <h2>Welcome back,</h2>
-                <form>
+                <form onSubmit={handleLogin}>
                     <input type="text" placeholder="Email" name="email" />
                     <input type="password" placeholder="Password" name="password" />
                     <button>Sign In</button>
                 </form>
             </div>
-            <div className="serparator"></div>
+            <div className="separator"></div>
             <div className="item">
             <h2>Create an Account</h2>
                 <form>
